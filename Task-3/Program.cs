@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        { 
             Console.WriteLine("Choose a task:");
             Console.WriteLine("1. Task 1");
             Console.WriteLine("2. Task 2");
@@ -65,6 +65,7 @@
 
 
 //code goes here in segments of each task, without the need to "//".
+//though you may need to add 'Console.ReadLine();' at the end of each task to keep the console open after the task is completed.
 
 internal class Task1
 {
@@ -133,10 +134,13 @@ internal class Task5
 {
     public static void Run()
     {
+        Console.WriteLine("Enter your raw exam score to roud the score to zero decimal.");
 
+        double score = Convert.ToDouble(Console.ReadLine());
+        double rounded = Math.Round(score,0);
+        Console.WriteLine("Your rounded score is: " + rounded);
 
-
-
+        Console.ReadLine() ;
     }
 
 }
