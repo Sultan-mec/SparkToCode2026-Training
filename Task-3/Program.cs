@@ -119,10 +119,12 @@ internal class Task4
 {
     public static void Run()
     {
+        Console.WriteLine("Enter days of your free trial subscribtion to get the day the trial ends");
+        int days = Convert.ToInt32(Console.ReadLine());
+        DateTime trialEndDate = DateTime.Today.AddDays(days);
+        Console.WriteLine("Your free trial ends on: " + trialEndDate.ToString("yyyy-MM-dd"));
 
-
-
-
+        Console.ReadLine();
     }
 
 }
