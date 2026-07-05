@@ -87,10 +87,15 @@ internal class Task2
 {
     public static void Run()
     {
+        Console.WriteLine("Enter a number to get the power of 2 and Square root");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        int power = (int)Math.Pow(num1, 2);
+        int squareRoot = (int)Math.Sqrt(num1);
 
+        Console.WriteLine("The power of 2 of " + num1 + " is: " + power);
+        Console.WriteLine("The square root of " + num1 + " is: " + squareRoot);
 
-
-
+        Console.ReadLine();
     }
 
 }
