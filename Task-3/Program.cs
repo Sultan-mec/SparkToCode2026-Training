@@ -105,9 +105,12 @@ internal class Task3
     public static void Run()
     {
 
+        Console.WriteLine("Enter your fullname to get: letter count, uppercase, and lowercase");
+        string fullname = Console.ReadLine();
+        Console.WriteLine( fullname.ToUpper() + " " + fullname.ToLower());
+        Console.WriteLine( fullname.Length + " letters in your name");
 
-
-
+        Console.ReadLine();
     }
 
 }
