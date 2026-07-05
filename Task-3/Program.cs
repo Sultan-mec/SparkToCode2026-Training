@@ -13,10 +13,10 @@
             Console.WriteLine("6. Task 6");
             Console.WriteLine("7. Task 7");
             Console.WriteLine("8. Task 8");
-            Console.WriteLine("9. Task 9");
+            Console.WriteLine("9. Task 9"); //you may add more tasks here
             string choice = Console.ReadLine();
 
-            switch (choice)  // after writing a task , you run the program and select task you want to test.
+            switch (choice)  // after a task , you run the program and select which task you want to test.
             {
                 case "1":
                     Console.WriteLine("=================Task 1 selected================");
@@ -70,10 +70,15 @@ internal class Task1
 {
     public static void Run()
     {
+        Console.WriteLine("Enter 2 numbers to subtract 2nd from 1st, value should be positive");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        int num2 = Convert.ToInt32(Console.ReadLine());
 
+        int num3 = Math.Abs(num1 - num2);
 
-
-
+        Console.WriteLine("The result of the subtraction is: " + num3);
+        Console.ReadLine();
+        
     }
 
 }
@@ -197,3 +202,5 @@ internal class Task11
     }
 
 }
+
+
