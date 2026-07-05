@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        { 
+        {
             Console.WriteLine("Choose a task:");
             Console.WriteLine("1. Task 1");
             Console.WriteLine("2. Task 2");
@@ -14,6 +14,8 @@
             Console.WriteLine("7. Task 7");
             Console.WriteLine("8. Task 8");
             Console.WriteLine("9. Task 9"); //you may add more tasks here
+            Console.WriteLine("10. Task 10");
+            Console.WriteLine("11. Task 11");
             string choice = Console.ReadLine();
 
             switch (choice)  // after a task , you run the program and select which task you want to test.
@@ -57,6 +59,7 @@
 
                 default:
                     Console.WriteLine("Invalid choice");
+                    Console.ReadLine();
                     break;
             }
         }
@@ -79,7 +82,7 @@ internal class Task1
 
         Console.WriteLine("The result of the subtraction is: " + num3);
         Console.ReadLine();
-        
+
     }
 
 }
@@ -108,8 +111,8 @@ internal class Task3
 
         Console.WriteLine("Enter your fullname to get: letter count, uppercase, and lowercase");
         string fullname = Console.ReadLine();
-        Console.WriteLine( fullname.ToUpper() + " " + fullname.ToLower());
-        Console.WriteLine( fullname.Length + " letters in your name");
+        Console.WriteLine(fullname.ToUpper() + " " + fullname.ToLower());
+        Console.WriteLine(fullname.Length + " letters in your name");
 
         Console.ReadLine();
     }
@@ -137,10 +140,10 @@ internal class Task5
         Console.WriteLine("Enter your raw exam score to roud the score to zero decimal.");
 
         double score = Convert.ToDouble(Console.ReadLine());
-        double rounded = Math.Round(score,0);
+        double rounded = Math.Round(score, 0);
         Console.WriteLine("Your rounded score is: " + rounded);
 
-        Console.ReadLine() ;
+        Console.ReadLine();
     }
 
 }
@@ -149,13 +152,40 @@ internal class Task6
 {
     public static void Run()
     {
+        Console.WriteLine("Password Strength Checker: enter a password, at least 8 characters long and without containing the word 'password'");
+        string password = Console.ReadLine();
+        password = password.ToLower();
 
+        int length = password.Length;
+        bool blocked = password.Contains("password");
 
+        if (length >= 8 && !blocked)
+        {
+            Console.WriteLine("Password is strong");
+        }
+        else
+        {
 
+            if (password.Contains("password"))
+            {
+                Console.WriteLine("Password is weak, it contains the word 'password'");
+            }
+            else if (length < 8)
+            {
+                Console.WriteLine("Password is weak, it is less than 8 characters long");
+            }
+            else if(password.Contains("password") && length < 8)
+            {
+                Console.WriteLine("Password is weak, it is less than 8 characters long and contains the word 'password'");
+            }
+        }
 
+        Console.ReadLine();
     }
 
 }
+
+
 
 internal class Task7
 {
@@ -216,5 +246,3 @@ internal class Task11
     }
 
 }
-
-
