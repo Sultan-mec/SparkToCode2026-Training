@@ -17,6 +17,7 @@
             Console.WriteLine("10. Task 10");
             Console.WriteLine("11. Task 11");
             string choice = Console.ReadLine();
+            choice = choice.Trim(); // remove any leading or trailing whitespace from the input
 
             switch (choice)  // after a task , you run the program and select which task you want to test.
             {
@@ -174,7 +175,7 @@ internal class Task6
             {
                 Console.WriteLine("Password is weak, it is less than 8 characters long");
             }
-            else if(password.Contains("password") && length < 8)
+            else if (password.Contains("password") && length < 8)
             {
                 Console.WriteLine("Password is weak, it is less than 8 characters long and contains the word 'password'");
             }
@@ -191,12 +192,25 @@ internal class Task7
 {
     public static void Run()
     {
+        Console.WriteLine("enter the same Name twice. program will identify correctness");
+
+        String name1 = Console.ReadLine();
+        String name2 = Console.ReadLine();
+        name1 = name1.ToLower().Trim();
+        name2 = name2.ToLower().Trim(); //combo
 
 
-
+        if (name1.Equals(name2))
+        {
+            Console.WriteLine("Match");
+        }
+        else
+        {
+            Console.WriteLine("No Match");
+        }
+        Console.ReadLine();
 
     }
-
 }
 
 internal class Task8
