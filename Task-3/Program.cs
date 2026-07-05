@@ -13,10 +13,13 @@
             Console.WriteLine("6. Task 6");
             Console.WriteLine("7. Task 7");
             Console.WriteLine("8. Task 8");
-            Console.WriteLine("9. Task 9");
+            Console.WriteLine("9. Task 9"); //you may add more tasks here
+            Console.WriteLine("10. Task 10");
+            Console.WriteLine("11. Task 11");
             string choice = Console.ReadLine();
+            choice = choice.Trim(); // remove any leading or trailing whitespace from the input
 
-            switch (choice)  // after writing a task , you run the program and select task you want to test.
+            switch (choice)  // after a task , you run the program and select which task you want to test.
             {
                 case "1":
                     Console.WriteLine("=================Task 1 selected================");
@@ -57,6 +60,7 @@
 
                 default:
                     Console.WriteLine("Invalid choice");
+                    Console.ReadLine();
                     break;
             }
         }
@@ -65,14 +69,20 @@
 
 
 //code goes here in segments of each task, without the need to "//".
+//though you may need to add 'Console.ReadLine();' at the end of each task to keep the console open after the task is completed.
 
 internal class Task1
 {
     public static void Run()
     {
+        Console.WriteLine("Enter 2 numbers to subtract 2nd from 1st, value should be positive");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        int num2 = Convert.ToInt32(Console.ReadLine());
 
+        int num3 = Math.Abs(num1 - num2);
 
-
+        Console.WriteLine("The result of the subtraction is: " + num3);
+        Console.ReadLine();
 
     }
 
@@ -82,10 +92,15 @@ internal class Task2
 {
     public static void Run()
     {
+        Console.WriteLine("Enter a number to get the power of 2 and Square root");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+        int power = (int)Math.Pow(num1, 2);
+        int squareRoot = (int)Math.Sqrt(num1);
 
+        Console.WriteLine("The power of 2 of " + num1 + " is: " + power);
+        Console.WriteLine("The square root of " + num1 + " is: " + squareRoot);
 
-
-
+        Console.ReadLine();
     }
 
 }
@@ -95,9 +110,12 @@ internal class Task3
     public static void Run()
     {
 
+        Console.WriteLine("Enter your fullname to get: letter count, uppercase, and lowercase");
+        string fullname = Console.ReadLine();
+        Console.WriteLine(fullname.ToUpper() + " " + fullname.ToLower());
+        Console.WriteLine(fullname.Length + " letters in your name");
 
-
-
+        Console.ReadLine();
     }
 
 }
@@ -106,10 +124,12 @@ internal class Task4
 {
     public static void Run()
     {
+        Console.WriteLine("Enter days of your free trial subscribtion to get the day the trial ends");
+        int days = Convert.ToInt32(Console.ReadLine());
+        DateTime trialEndDate = DateTime.Today.AddDays(days);
+        Console.WriteLine("Your free trial ends on: " + trialEndDate.ToString("yyyy-MM-dd"));
 
-
-
-
+        Console.ReadLine();
     }
 
 }
@@ -118,10 +138,13 @@ internal class Task5
 {
     public static void Run()
     {
+        Console.WriteLine("Enter your raw exam score to roud the score to zero decimal.");
 
+        double score = Convert.ToDouble(Console.ReadLine());
+        double rounded = Math.Round(score, 0);
+        Console.WriteLine("Your rounded score is: " + rounded);
 
-
-
+        Console.ReadLine();
     }
 
 }
@@ -130,34 +153,97 @@ internal class Task6
 {
     public static void Run()
     {
+        Console.WriteLine("Password Strength Checker: enter a password, at least 8 characters long and without containing the word 'password'");
+        string password = Console.ReadLine();
+        password = password.ToLower();
 
+        int length = password.Length;
+        bool blocked = password.Contains("password");
 
+        if (length >= 8 && !blocked)
+        {
+            Console.WriteLine("Password is strong");
+        }
+        else
+        {
 
+            if (password.Contains("password"))
+            {
+                Console.WriteLine("Password is weak, it contains the word 'password'");
+            }
+            else if (length < 8)
+            {
+                Console.WriteLine("Password is weak, it is less than 8 characters long");
+            }
+            else if (password.Contains("password") && length < 8)
+            {
+                Console.WriteLine("Password is weak, it is less than 8 characters long and contains the word 'password'");
+            }
+        }
 
+        Console.ReadLine();
     }
 
 }
+
+
 
 internal class Task7
 {
     public static void Run()
     {
+        Console.WriteLine("enter the same Name twice. program will identify correctness");
+
+        String name1 = Console.ReadLine();
+        String name2 = Console.ReadLine();
+        name1 = name1.ToLower().Trim();
+        name2 = name2.ToLower().Trim(); //combo
 
 
-
+        if (name1.Equals(name2))
+        {
+            Console.WriteLine("Match");
+        }
+        else
+        {
+            Console.WriteLine("No Match");
+        }
+        Console.ReadLine();
 
     }
-
 }
 
 internal class Task8
 {
     public static void Run()
     {
+        Console.WriteLine("Membership Expiry Checker");
+        Console.WriteLine("Enter membership start date as follows: 'yyyy-MM-dd', and then the number of days in said membership.");
 
+        //string startDate = Console.ReadLine();
+        DateTime startDate = DateTime.Parse(Console.ReadLine());
+        int membershipDays = Convert.ToInt32(Console.ReadLine());
 
+        try
+        {
+            DateTime expiryDate = startDate.AddDays(membershipDays);
+            Console.WriteLine("Membership expires on: " + expiryDate.ToString("yyyy-MM-dd"));
 
-
+            if (DateTime.Today > expiryDate)
+            {
+                Console.WriteLine("Membership has expired.");
+            }
+            else
+            {
+                Console.WriteLine("Membership is still valid.");
+            }
+        }
+        catch
+        {
+            Console.WriteLine("Invalid date format. Please enter the date in 'yyyy-MM-dd' format.");
+        }
+        //
+        Console.ReadLine();
     }
 
 }
