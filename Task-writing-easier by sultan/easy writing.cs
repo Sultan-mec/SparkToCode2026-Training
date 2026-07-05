@@ -70,10 +70,22 @@ internal class Task1
 {
     public static void Run()
     {
+        bool isRunning = true;
+        while (isRunning)
+        {
+            try
+            {
 
-        
+                isRunning = false;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
 
 
+        Console.ReadLine();
     }
 
 }
@@ -85,7 +97,7 @@ internal class Task2
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -97,7 +109,7 @@ internal class Task3
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -109,7 +121,7 @@ internal class Task4
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -121,7 +133,7 @@ internal class Task5
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -133,7 +145,7 @@ internal class Task6
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -145,7 +157,7 @@ internal class Task7
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -157,7 +169,7 @@ internal class Task8
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -169,7 +181,7 @@ internal class Task9
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -181,7 +193,7 @@ internal class Task10
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -193,7 +205,7 @@ internal class Task11
 
 
 
-
+        Console.ReadLine();
     }
 
 }
@@ -209,9 +221,30 @@ internal class Task12
 
         //keep empty for fast "copy pasta"
 
-
+        Console.ReadLine();
     }
 
 }
 
 /**************************************************************/
+
+internal class Task13
+{
+    public static void Run()
+    {
+
+        bool isRunning = true;
+        while (isRunning)
+        {
+            try
+            {
+
+                isRunning = false;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
+    }
+}

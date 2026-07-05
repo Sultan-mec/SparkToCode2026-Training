@@ -79,7 +79,7 @@ internal class Task1
         int num1 = Convert.ToInt32(Console.ReadLine());
         int num2 = Convert.ToInt32(Console.ReadLine());
 
-        int num3 = Math.Abs(num1 - num2);
+        int num3 = Math.Abs(num2 - num1);
 
         Console.WriteLine("The result of the subtraction is: " + num3);
         Console.ReadLine();
@@ -112,6 +112,7 @@ internal class Task3
 
         Console.WriteLine("Enter your fullname to get: letter count, uppercase, and lowercase");
         string fullname = Console.ReadLine();
+
         Console.WriteLine(fullname.ToUpper() + " " + fullname.ToLower());
         Console.WriteLine(fullname.Length + " letters in your name");
 
