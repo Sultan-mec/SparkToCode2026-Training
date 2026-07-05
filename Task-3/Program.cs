@@ -217,10 +217,33 @@ internal class Task8
 {
     public static void Run()
     {
+        Console.WriteLine("Membership Expiry Checker");
+        Console.WriteLine("Enter membership start date as follows: 'yyyy-MM-dd', and then the number of days in said membership.");
 
+        //string startDate = Console.ReadLine();
+        DateTime startDate = DateTime.Parse(Console.ReadLine());
+        int membershipDays = Convert.ToInt32(Console.ReadLine());
 
+        try
+        {
+            DateTime expiryDate = startDate.AddDays(membershipDays);
+            Console.WriteLine("Membership expires on: " + expiryDate.ToString("yyyy-MM-dd"));
 
-
+            if (DateTime.Today > expiryDate)
+            {
+                Console.WriteLine("Membership has expired.");
+            }
+            else
+            {
+                Console.WriteLine("Membership is still valid.");
+            }
+        }
+        catch
+        {
+            Console.WriteLine("Invalid date format. Please enter the date in 'yyyy-MM-dd' format.");
+        }
+        //
+        Console.ReadLine();
     }
 
 }
