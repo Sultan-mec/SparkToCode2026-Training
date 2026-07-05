@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        { //copy from here downwards and paste it in your main program to use this as an extention/feature.
             Console.WriteLine("Choose a task:");
             Console.WriteLine("1. Task 1");
             Console.WriteLine("2. Task 2");
