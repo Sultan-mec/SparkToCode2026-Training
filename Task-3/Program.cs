@@ -1,4 +1,6 @@
-﻿namespace Task_3
+﻿using System.Security.Cryptography;
+
+namespace Task_3
 {
     internal class Program
     {
@@ -67,7 +69,7 @@
                     break;
                 case "12":
                     Console.WriteLine("=================Task 12 selected================");
-                    Task11.Run();//you may remove or add more tasks
+                    Task12.Run();//you may remove or add more tasks
                     break;
 
                 default:
@@ -314,6 +316,40 @@ internal class Task10
 }
 
 internal class Task11
+{
+    public static void Run()
+    {
+        Console.WriteLine("system generating OTP code, please wait...");
+        //int randomNumber = new Random().Next(1000, 9999);
+        int randomNumber = RandomNumberGenerator.GetInt32(1000, 9999);
+        Console.WriteLine("Your OTP code is: " + randomNumber);
+        Console.WriteLine("Verify the OTP code given");
+        int Userinput =Convert.ToInt32(Console.ReadLine());
+
+        if (Userinput == randomNumber)
+        {
+            Console.WriteLine("OTP verified!!");
+        }
+        else 
+        {
+            Console.WriteLine("OTP verification failed, please try again.");
+        }
+        /*
+        switch (User input)
+        {
+            case randomNumber:
+                Console.WriteLine("OTP verified!!");
+                break;
+            default:
+                Console.WriteLine("OTP verification failed, please try again.");
+                break;
+        }
+        */
+
+    }
+
+}
+internal class Task12
 {
     public static void Run()
     {
