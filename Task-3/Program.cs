@@ -58,15 +58,15 @@ namespace Task_3
                     break;
                 case "9":
                     Console.WriteLine("=================Task 9 selected================");
-                    Task9.Run();//you may remove or add more tasks
+                    Task9.Run();
                     break;
                 case "10":
                     Console.WriteLine("=================Task 10 selected================");
-                    Task10.Run();//you may remove or add more tasks
+                    Task10.Run();
                     break;
                 case "11":
                     Console.WriteLine("=================Task 11 selected================");
-                    Task11.Run();//you may remove or add more tasks
+                    Task11.Run();
                     break;
                 case "12":
                     Console.WriteLine("=================Task 12 selected================");
