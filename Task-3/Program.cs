@@ -1,4 +1,6 @@
-﻿namespace Task_3
+﻿using System.Security.Cryptography;
+
+namespace Task_3
 {
     internal class Program
     {
@@ -16,6 +18,7 @@
             Console.WriteLine("9. Task 9"); //you may add more tasks here
             Console.WriteLine("10. Task 10");
             Console.WriteLine("11. Task 11");
+            Console.WriteLine("12. Task 12");
             string choice = Console.ReadLine();
             choice = choice.Trim(); // remove any leading or trailing whitespace from the input
 
@@ -57,6 +60,18 @@
                     Console.WriteLine("=================Task 9 selected================");
                     Task9.Run();//you may remove or add more tasks
                     break;
+                case "10":
+                    Console.WriteLine("=================Task 10 selected================");
+                    Task10.Run();//you may remove or add more tasks
+                    break;
+                case "11":
+                    Console.WriteLine("=================Task 11 selected================");
+                    Task11.Run();//you may remove or add more tasks
+                    break;
+                case "12":
+                    Console.WriteLine("=================Task 12 selected================");
+                    Task12.Run();//you may remove or add more tasks
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice");
@@ -79,7 +94,7 @@ internal class Task1
         int num1 = Convert.ToInt32(Console.ReadLine());
         int num2 = Convert.ToInt32(Console.ReadLine());
 
-        int num3 = Math.Abs(num1 - num2);
+        int num3 = Math.Abs(num2 - num1);
 
         Console.WriteLine("The result of the subtraction is: " + num3);
         Console.ReadLine();
@@ -112,6 +127,7 @@ internal class Task3
 
         Console.WriteLine("Enter your fullname to get: letter count, uppercase, and lowercase");
         string fullname = Console.ReadLine();
+
         Console.WriteLine(fullname.ToUpper() + " " + fullname.ToLower());
         Console.WriteLine(fullname.Length + " letters in your name");
 
@@ -253,6 +269,17 @@ internal class Task9
     public static void Run()
     {
 
+        Console.WriteLine("Enter a decimal number to get 3 differant rounding methods");
+
+        double num6 = Convert.ToDouble(Console.ReadLine());
+        double rounded2 = Math.Round(num6, 0);
+        Console.WriteLine("whole number: " + rounded2);
+        double rounded3 = Math.Ceiling(num6);
+        double rounded4 = Math.Floor(num6);
+        Console.WriteLine("rounded up: " + rounded3);
+        Console.WriteLine("rounded down: " + rounded4);
+
+        Console.ReadLine();
 
 
 
@@ -265,6 +292,23 @@ internal class Task10
     public static void Run()
     {
 
+        Console.WriteLine("Enter a full sentence: ");
+        string sentence = Console.ReadLine();
+        Console.WriteLine("Enter a word from the sentence, to look for its position: ");
+        string word = Console.ReadLine();
+
+        int FirstIndex = sentence.IndexOf(word);
+        int LastIndex = sentence.LastIndexOf(word);
+
+        if (!sentence.Contains(word))
+        {
+            Console.WriteLine("Word not found...");
+        }
+        else
+        {
+            Console.WriteLine("First index at: " + FirstIndex);
+            Console.WriteLine("Last index at: " + LastIndex);
+        }
 
 
 
@@ -276,8 +320,65 @@ internal class Task11
 {
     public static void Run()
     {
+        Console.WriteLine("system generating OTP code, please wait...");
+        //int randomNumber = new Random().Next(1000, 9999);
+        int randomNumber = RandomNumberGenerator.GetInt32(1000, 9999);
+        Console.WriteLine("Your OTP code is: " + randomNumber);
+        Console.WriteLine("Verify the OTP code given");
+        int Userinput = Convert.ToInt32(Console.ReadLine());
 
+        if (Userinput == randomNumber)
+        {
+            Console.WriteLine("OTP verified!!");
+        }
+        else
+        {
+            Console.WriteLine("OTP verification failed, please try again.");
+        }
+        /*
+        switch (User input)
+        {
+            case randomNumber:
+                Console.WriteLine("OTP verified!!");
+                break;
+            default:
+                Console.WriteLine("OTP verification failed, please try again.");
+                break;
+        }
+        */
 
+    }
+
+}
+internal class Task12
+{
+    public static void Run()
+    {
+        Console.WriteLine("Enter your date of birth in the format 'yyyy-MM-dd' to get your age and day of the week you were born!");
+        ////
+        string DOBinput = Console.ReadLine();
+        DateTime DOB;
+        try
+        {
+            DOB = DateTime.Parse(DOBinput);
+        }
+        catch
+        {
+            Console.WriteLine("invalid date format");
+            return;
+        }
+        ////
+        DateTime today = DateTime.Today;
+        ////
+        int age = today.Year - DOB.Year;
+        if (today.Month < DOB.Month || (today.Month == DOB.Month && today.Day < DOB.Day)) //re-study
+        {
+            age--;
+        }
+        ////
+        Console.WriteLine("your age: " + age);
+        DayOfWeek birthdayOfweek = DOB.DayOfWeek;
+        Console.WriteLine("you were born on a: " + birthdayOfweek);
 
 
     }
