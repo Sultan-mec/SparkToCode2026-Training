@@ -18,6 +18,7 @@ namespace Task_3
             Console.WriteLine("9. Task 9"); //you may add more tasks here
             Console.WriteLine("10. Task 10");
             Console.WriteLine("11. Task 11");
+            Console.WriteLine("12. Task 12");
             string choice = Console.ReadLine();
             choice = choice.Trim(); // remove any leading or trailing whitespace from the input
 
@@ -324,13 +325,13 @@ internal class Task11
         int randomNumber = RandomNumberGenerator.GetInt32(1000, 9999);
         Console.WriteLine("Your OTP code is: " + randomNumber);
         Console.WriteLine("Verify the OTP code given");
-        int Userinput =Convert.ToInt32(Console.ReadLine());
+        int Userinput = Convert.ToInt32(Console.ReadLine());
 
         if (Userinput == randomNumber)
         {
             Console.WriteLine("OTP verified!!");
         }
-        else 
+        else
         {
             Console.WriteLine("OTP verification failed, please try again.");
         }
@@ -353,8 +354,31 @@ internal class Task12
 {
     public static void Run()
     {
-
-
+        Console.WriteLine("Enter your date of birth in the format 'yyyy-MM-dd' to get your age and day of the week you were born!");
+        ////
+        string DOBinput = Console.ReadLine();
+        DateTime DOB;
+        try
+        {
+            DOB = DateTime.Parse(DOBinput);
+        }
+        catch
+        {
+            Console.WriteLine("invalid date format");
+            return;
+        }
+        ////
+        DateTime today = DateTime.Today;
+        ////
+        int age = today.Year - DOB.Year;
+        if (today.Month < DOB.Month || (today.Month == DOB.Month && today.Day < DOB.Day)) //re-study
+        {
+            age--;
+        }
+        ////
+        Console.WriteLine("your age: " + age);
+        DayOfWeek birthdayOfweek = DOB.DayOfWeek;
+        Console.WriteLine("you were born on a: " + birthdayOfweek);
 
 
     }
