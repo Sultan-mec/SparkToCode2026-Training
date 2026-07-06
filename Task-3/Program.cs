@@ -265,9 +265,19 @@ internal class Task9
 {
     public static void Run()
     {
-     
 
-     
+        Console.WriteLine("Enter a decimal number to get 3 differant rounding methods");
+
+        double num6 = Convert.ToDouble(Console.ReadLine());
+        double rounded2 = Math.Round(num6, 0);
+        Console.WriteLine("whole number: " + rounded2);
+        double rounded3 = Math.Ceiling(num6);
+        double rounded4 = Math.Floor(num6);
+        Console.WriteLine("rounded up: " + rounded3);
+        Console.WriteLine("rounded down: " + rounded4);
+
+        Console.ReadLine();
+
 
 
     }
