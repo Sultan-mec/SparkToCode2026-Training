@@ -57,6 +57,18 @@
                     Console.WriteLine("=================Task 9 selected================");
                     Task9.Run();//you may remove or add more tasks
                     break;
+                case "10":
+                    Console.WriteLine("=================Task 10 selected================");
+                    Task10.Run();//you may remove or add more tasks
+                    break;
+                case "11":
+                    Console.WriteLine("=================Task 11 selected================");
+                    Task11.Run();//you may remove or add more tasks
+                    break;
+                case "12":
+                    Console.WriteLine("=================Task 12 selected================");
+                    Task11.Run();//you may remove or add more tasks
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice");
@@ -253,8 +265,9 @@ internal class Task9
 {
     public static void Run()
     {
+     
 
-
+     
 
 
     }
@@ -266,6 +279,23 @@ internal class Task10
     public static void Run()
     {
 
+        Console.WriteLine("Enter a full sentence: ");
+        string sentence = Console.ReadLine();
+        Console.WriteLine("Enter a word from the sentence, to look for its position: ");
+        string word = Console.ReadLine();
+
+        int FirstIndex = sentence.IndexOf(word);
+        int LastIndex = sentence.LastIndexOf(word);
+
+        if (!sentence.Contains(word))
+        {
+            Console.WriteLine("Word not found...");
+        }
+        else
+        {
+            Console.WriteLine("First index at: " + FirstIndex);
+            Console.WriteLine("Last index at: " + LastIndex);
+        }
 
 
 

@@ -75,7 +75,10 @@ internal class Task1
         {
             try
             {
-
+                //Your task 1 code goes here
+                //this helps catch any format exceptions that may occur during input parsing or conversion
+                //ensuring that the program doesn't crash and provides a user-friendly error message instead.
+                //cc: tankasuar-cloud
                 isRunning = false;
             }
             catch (FormatException)
