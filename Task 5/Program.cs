@@ -135,8 +135,31 @@ internal class Task6
     public static void Run()
     {
         List<string> ShoppingList = new List<string>();
-
-
+        Console.WriteLine("Enter your shopping list items:");
+        string input = Console.ReadLine();
+        //
+        while (input != "done")
+        {
+            ShoppingList.Add(input);
+            Console.WriteLine("Enter another item or type 'done' to end list making");
+            input = Console.ReadLine();
+        }
+        //
+        Console.WriteLine("current list:");
+        foreach (string item in ShoppingList)
+        {
+            Console.WriteLine("• " +item);
+        }
+        //
+        Console.WriteLine("enter one item to remove it: ");
+        string itemremove = Console.ReadLine();
+        ShoppingList.Remove(itemremove);
+        //
+        Console.WriteLine("updated list!. review it: ");
+        foreach (string item in ShoppingList)
+        {
+            Console.WriteLine("• " + item);
+        }
 
         Console.ReadLine();
     }
