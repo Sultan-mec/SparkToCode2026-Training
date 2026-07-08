@@ -170,6 +170,22 @@ internal class Task7
 {
     public static void Run()
     {
+        List<int> scoreList = new List<int>();
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("enter score for match " + (i+1)+ " : ");
+            int score = int.Parse(Console.ReadLine());
+            scoreList.Add(score);
+        }
+        //
+        scoreList.Sort();
+        scoreList.Reverse();
+        //
+        
+            Console.WriteLine("1st place: " + scoreList[0]);
+            Console.WriteLine("1st place: " + scoreList[1]);
+            Console.WriteLine("1st place: " + scoreList[2]);
+        
 
 
 
