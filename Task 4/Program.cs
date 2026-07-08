@@ -1,228 +1,217 @@
-﻿namespace Task_4
+﻿
+namespace Task_4
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static double CalculateArea(double W, double L)
         {
-            Console.WriteLine("Choose a task:");
-            Console.WriteLine("1. Task 1");
-            Console.WriteLine("2. Task 2");
-            Console.WriteLine("3. Task 3");
-            Console.WriteLine("4. Task 4");
-            Console.WriteLine("5. Task 5");
-            Console.WriteLine("6. Task 6");
-            Console.WriteLine("7. Task 7");
-            Console.WriteLine("8. Task 8");
-            Console.WriteLine("9. Task 9");
-            Console.WriteLine("10. Task 10");
-            Console.WriteLine("11. Task 11");
-            Console.WriteLine("12. Task 12");
-            string choice = Console.ReadLine();
+            return W * L;
+        }
+        public static double CalculatePerimeter(double W, double L)
+        {
+            return (2*(W + L));
+        }
 
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(""
+        }
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Task 5
+/*
+namespace Task_4
+{
+    internal class Program
+    {
+        public static bool IsEven(int x)
+        {
+        return x % 2 == 0;
+        }
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number to check if its even or odd");
+            int x = int.Parse(Console.ReadLine());
+            bool Answer = IsEven(x);
+            if (Answer)
+            {
+                Console.WriteLine(x + " is an Even Number");
+            }
+            else
+            {
+                Console.WriteLine(x + " is an Odd Number");
+            }
+        }
+
+
+
+
+
+
+    }
+}
+
+*/
+
+
+
+
+/////Task 9
+
+/*
+namespace Task_4
+{
+    internal class Program
+    {
+static int Multiply(int a, int b)
+{
+   return a * b;
+}
+static double Multiply(double a, double b)
+{
+   return a * b;
+}
+static int Multiply(int a, int b, int c)
+{
+   return a * b * c;
+}
+
+
+
+static void Main()
+{
+   Console.WriteLine("program asks for 5 inputs");
+
+
+   Console.WriteLine("first provide me with 3 integers");
+   Console.Write("Enter integer a: ");
+   int a = int.Parse(Console.ReadLine());
+   Console.Write("Enter integer b: ");
+   int b = int.Parse(Console.ReadLine());
+   Console.Write("Enter integer c: ");
+   int c = int.Parse(Console.ReadLine());
+
+
+   Console.WriteLine("now provide 2 double values");
+   Console.Write("Enter double d: ");
+   double d = double.Parse(Console.ReadLine());
+   Console.Write("Enter double e: ");
+   double e = double.Parse(Console.ReadLine());
+
+
+   Console.WriteLine("first overload: two integers multiply");
+   Console.WriteLine(Multiply(a, b));
+   Console.WriteLine("second overload: two doubles multiply");
+   Console.WriteLine(Multiply(d, e));
+   Console.WriteLine("third overload: 3 integers multiply");
+   Console.WriteLine(Multiply(a, b, c));
+}
+   */
+
+
+
+
+
+
+
+
+/*    Task 10
+ namespace Task_4
+{
+    internal class Program
+    {
+
+
+        public static double CalculateArea(double x)
+        {
+            return (x * x);
+        }
+        public static double CalculateArea(double width, double height)
+        {
+            return (width * height);
+        }
+        public static void Main()
+        {
+            Console.WriteLine("program can give you the area of a Square or a Rectangle!");
+            Console.WriteLine("which type would you like to choose?");
+            Console.Write("1: Square ");
+            Console.WriteLine(" 2. Rectangle");
+
+          
+
+            string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    Console.WriteLine("=================Task 1 selected================");
-                    Task1.Run();
+                    Console.Write("Enter side of Square: ");
+                    //
+                    double x = double.Parse(Console.ReadLine());
+                    Console.WriteLine("area of the Square = " + CalculateArea(x));
                     break;
                 case "2":
-                    Console.WriteLine("=================Task 2 selected================");
-                    Task2.Run();
-                    break;
-                case "3":
-                    Console.WriteLine("=================Task 3 selected================");
-                    Task3.Run();
-                    break;
-                case "4":
-                    Console.WriteLine("=================Task 4 selected================");
-                    Task4.Run();
-                    break;
-                case "5":
-                    Console.WriteLine("=================Task 5 selected================");
-                    Task5.Run();
-                    break;
-                case "6":
-                    Console.WriteLine("=================Task 6 selected================");
-                    Task6.Run();
-                    break;
-                case "7":
-                    Console.WriteLine("=================Task 7 selected================");
-                    Task7.Run();
-                    break;
-                case "8":
-                    Console.WriteLine("=================Task 8 selected================");
-                    Task8.Run();
-                    break;
-                case "9":
-                    Console.WriteLine("=================Task 9 selected================");
-                    Task9.Run();
-                    break;
-                case "10":
-                    Console.WriteLine("=================Task 10 selected================");
-                    Task10.Run();
-                    break;
-                case "11":
-                    Console.WriteLine("=================Task 11 selected================");
-                    Task11.Run();
-                    break;
-                case "12":
-                    Console.WriteLine("=================Task 12 selected================");
-                    Task12.Run();
+                    Console.Write("Enter width then height of Rectangle: ");
+                    //
+                    double width = double.Parse(Console.ReadLine());
+                    double height = double.Parse(Console.ReadLine());
+                    Console.WriteLine("area of the Reqtangle = " + CalculateArea(width, height));
                     break;
 
-                default:
-                    Console.WriteLine("Invalid choice");
-                    break;
+
             }
+
         }
     }
 }
 
+//
+/////////////////////
+*/
 
 
 
-internal class Task1
-{
-    public static void Run()
-    {
 
-
-    
-
-
-    Console.ReadLine();
-    }
-
-}
-
-internal class Task2
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task3
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task4
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task5
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task6
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task7
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task8
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task9
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task10
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task11
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
-
-internal class Task12
-{
-    public static void Run()
-    {
-
-
-
-        Console.ReadLine();
-    }
-
-}
