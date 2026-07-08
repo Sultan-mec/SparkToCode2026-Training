@@ -1,4 +1,4 @@
-﻿
+﻿//task 6
 namespace Task_4
 {
     internal class Program
@@ -15,47 +15,23 @@ namespace Task_4
 
         public static void Main(string[] args)
         {
-            Console.WriteLine(""
+            Console.WriteLine("Enter Rectangle Lenght");
+            double L = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Rectangle Width");
+            double w = double.Parse(Console.ReadLine());
+
+            double Area = CalculateArea(w, L);
+            double Perimiter = CalculatePerimeter(w, L);
+
+            Console.WriteLine("Area of rectangle is: "+Area);
+            Console.WriteLine("Perimeter of rectangle is: "+Perimiter);
+
+
         }
-
-
-
-
-
-
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
