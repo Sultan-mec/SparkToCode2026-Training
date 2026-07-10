@@ -1,7 +1,4 @@
-﻿using System.Transactions;
-using System.Xml.Linq;
-
-namespace Project_Sprint2
+﻿namespace Project_Sprint2
 {
     internal class Program
     {
@@ -94,9 +91,9 @@ namespace Project_Sprint2
         {
             Console.WriteLine("===== New User Account Creation =====");
             Console.WriteLine("Enter Your Name: ");
-            string Name = Console.ReadLine();
+            string Name = Console.ReadLine().Trim();
             Console.WriteLine("Enter your account number: ");
-            string AcNum = Console.ReadLine();
+            string AcNum = Console.ReadLine().Trim();
             //
             if (accountNumbers.Contains(AcNum))
             {
@@ -133,7 +130,7 @@ namespace Project_Sprint2
         static void DepositMoney()
         {
             Console.WriteLine("Enter account number to deposit: ");
-            string accountNumber = Console.ReadLine();
+            string accountNumber = Console.ReadLine().Trim();
             //
             int index = 0;
 
@@ -150,7 +147,7 @@ namespace Project_Sprint2
             try
             {
                 Console.WriteLine("Enter deposit ammout");
-                double ammount = double.Parse(Console.ReadLine());
+                double ammount = double.Parse(Console.ReadLine().Trim());
                 if (ammount <= 0)
                 {
                     Console.WriteLine("amount invalid..");
@@ -171,7 +168,7 @@ namespace Project_Sprint2
         static void WithdrawMoney()
         {
             Console.WriteLine("Enter account number to withdraw: ");
-            string accountNumber = Console.ReadLine();
+            string accountNumber = Console.ReadLine().Trim();
             //
             int index = 0;
 
@@ -188,7 +185,7 @@ namespace Project_Sprint2
             try
             {
                 Console.WriteLine("Enter desired withdraw ammout: ");
-                double ammount = double.Parse(Console.ReadLine());
+                double ammount = double.Parse(Console.ReadLine().Trim());
                 if (ammount <= 0)
                 {
                     Console.WriteLine("amount invalid..");
@@ -214,7 +211,7 @@ namespace Project_Sprint2
         static void ShowBalance()
         {
             Console.WriteLine("Enter account number to show balance: ");
-            string accountNumber = Console.ReadLine();
+            string accountNumber = Console.ReadLine().Trim();
             //
             int index = 0;
 
@@ -233,9 +230,74 @@ namespace Project_Sprint2
         }
         static void TransferAmount()
         {
-            // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter account number of Sneder: ");
+            int index1 = 0;
+            string accountNumber = Console.ReadLine().Trim();
+
+
+            if (accountNumbers.Contains(accountNumber))
+            {
+                index1 = accountNumbers.IndexOf(accountNumber);
+            }
+            else
+            {
+                Console.WriteLine("Account number not found..");
+                return;
+            }
+            Console.WriteLine("Enter account number of Receiver: ");
+            int index2 = 0;
+            string accountNumber2 = Console.ReadLine().Trim();
+
+
+            if (accountNumbers.Contains(accountNumber2))
+            {
+                index2 = accountNumbers.IndexOf(accountNumber2);
+            }
+            else
+            {
+                Console.WriteLine("Account number not found..");
+                return;
+            }
+            //
+            if (index1 == index2)
+            {
+                Console.WriteLine("Account numbers can not match..");
+                return;
+            }
+            //
+            Console.WriteLine("enter transfer amount");
+            double transferAmount = 0;
+            //
+            try
+            {
+                transferAmount = double.Parse(Console.ReadLine().Trim());
+                if (transferAmount <= 0)
+                {
+                    Console.WriteLine("ammount invalid..");
+                    return;
+                }
+                if (transferAmount > balances[index1])
+                {
+                    Console.WriteLine("Amount exceeds available funds");
+                    return;
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Please enter a valid transfer amount number");
+                return;
+            }
+            //
+            balances[index1] -= transferAmount;
+            balances[index2] += transferAmount;
+            //
+            Console.WriteLine("Transaction compleated successfully");
+            Console.WriteLine($"Sender: '{accountNumber}' current new balance: {balances[index1]}");
+            Console.WriteLine($"Receiver: '{accountNumber2}' current new balance: {balances[index2]} ");
         }
-        // TODO: write two more void, no-parameter functions here for
-        // your own custom services (option 6 and option 7)
+
+
+
+        //
     }
 }
