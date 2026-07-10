@@ -110,7 +110,7 @@ namespace Project_Sprint2
                 initialDeposit = double.Parse(Console.ReadLine());
                 if (initialDeposit <= 0)
                 {
-                    Console.WriteLine("Ammout must not be negative"); 
+                    Console.WriteLine("Ammout must not be negative");
                     return;
                 }
             }
@@ -138,9 +138,9 @@ namespace Project_Sprint2
             int index = 0;
 
             if (accountNumbers.Contains(accountNumber))
-                {
+            {
                 index = accountNumbers.IndexOf(accountNumber);
-                }
+            }
             else
             {
                 Console.WriteLine("Account number not found..");
@@ -154,7 +154,7 @@ namespace Project_Sprint2
                 if (ammount <= 0)
                 {
                     Console.WriteLine("amount invalid..");
-                    return ;
+                    return;
                 }
                 else
                 {
@@ -170,7 +170,46 @@ namespace Project_Sprint2
         }
         static void WithdrawMoney()
         {
-            // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter account number to withdraw: ");
+            string accountNumber = Console.ReadLine();
+            //
+            int index = 0;
+
+            if (accountNumbers.Contains(accountNumber))
+            {
+                index = accountNumbers.IndexOf(accountNumber);
+            }
+            else
+            {
+                Console.WriteLine("Account number not found..");
+                return;
+            }
+            //
+            try
+            {
+                Console.WriteLine("Enter desired withdraw ammout: ");
+                double ammount = double.Parse(Console.ReadLine());
+                if (ammount <= 0)
+                {
+                    Console.WriteLine("amount invalid..");
+                    return;
+                }
+                if (ammount > balances[index])
+                {
+                    Console.WriteLine("Amount exceeds available funds");
+                    return;
+                }
+                else
+                {
+                    balances[index] -= ammount;
+                    Console.WriteLine($"Current available funds: {balances[index]}");
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("amount invalid..");
+                return;
+            }
         }
         static void ShowBalance()
         {
