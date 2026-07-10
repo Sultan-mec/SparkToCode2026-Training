@@ -213,7 +213,23 @@ namespace Project_Sprint2
         }
         static void ShowBalance()
         {
-            // TODO: implement this service (see Section 3 requirements)
+            Console.WriteLine("Enter account number to show balance: ");
+            string accountNumber = Console.ReadLine();
+            //
+            int index = 0;
+
+            if (accountNumbers.Contains(accountNumber))
+            {
+                index = accountNumbers.IndexOf(accountNumber);
+            }
+            else
+            {
+                Console.WriteLine("Account number not found..");
+                return;
+            }
+            Console.WriteLine($"Account name: {customerNames[index]}");
+            Console.WriteLine($"Account number: {accountNumbers[index]}");
+            Console.WriteLine($"Current balance: {balances[index]}");
         }
         static void TransferAmount()
         {
