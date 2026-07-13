@@ -16,7 +16,7 @@ namespace OOP_Part_1
         //
         public void Deposit(double amount)
         {
-            if (amount > 0) { Console.WriteLine("invalid amount.."); }
+            if (amount <= 0) { Console.WriteLine("invalid amount.."); }
             else { Balance += amount; SendEmail(); }
         }
         public void Withdraw(double amount)
@@ -123,8 +123,8 @@ public class Product
 
 internal class Program
 {
-    static BankAccount account1 = new BankAccount { AccountNumber = 9735, HolderName = "Sultan", Balance = 5950 };
-    static BankAccount account2 = new BankAccount { AccountNumber = 1825, HolderName = "Raad", Balance = 6960 };
+    static BankAccount account1 = new BankAccount(9735, "Sultan", 5950);
+    static BankAccount account2 = new BankAccount(1825, "Raad", 6960);
     //
     static Student student1 = new Student { Name = "Jalal", Address = "Seeb", Grade = 89 };
     static Student student2 = new Student { Name = "Osama", Address = "Ibra", Grade = 79 };
@@ -178,13 +178,13 @@ internal class Program
                 case 3: MakeDeposit(); break;
                 case 4: MakeWithdrawal(); break;
                 case 5: ViewProductDetails(); break;
-                //case 6: RegisterStudent(); break;
-                //case 7: CompareAccountBalance(); break;
-                //case 8: RestockProduct(); break;
-                //case 9: TransferBetweenAccounts(); break;
-                //case 10: UpdateStudentGrade(); break;
-                //case 11: StudentReportCard(); break;
-                //case 12: AccountHealthStatus(); break;
+                case 6: RegisterStudent(); break;
+                case 7: CompareAccountBalance(); break;
+                case 8: RestockProduct(); break;
+                case 9: TransferBetweenAccounts(); break;
+                case 10: UpdateStudentGrade(); break;
+                case 11: StudentReportCard(); break;
+                case 12: AccountHealthStatus(); break;
                 //case 13: BulkSale(); break;
                 //case 14: Scholarship(); break;
                 //case 15: BalanceTopUp(); break;
@@ -207,8 +207,8 @@ internal class Program
         string input = Console.ReadLine();
         if (input == "2") { return account2; } else { return account1; }
     }
-    static Student ChooseStudent ()
-    { 
+    static Student ChooseStudent()
+    {
         Console.WriteLine("select a student:" +
         "Type 1 for 'Jalal' or 2 for 'Osama' ");
         //
@@ -296,7 +296,34 @@ internal class Program
     }
     ///////
     //////
-    
+    static void RegisterStudent()
+    {
+
+    }
+    static void CompareAccountBalance()
+    {
+
+    }
+    static void RestockProduct()
+    {
+
+    }
+    static void TransferBetweenAccounts()
+    {
+
+    }
+    static void UpdateStudentGrade()
+    {
+
+    }
+    static void StudentReportCard()
+    {
+
+    }
+    static void AccountHealthStatus()
+    {
+
+    }
 }
 
 
