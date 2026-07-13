@@ -269,7 +269,24 @@ internal class Program
     }
     static void MakeWithdrawal()
     {
+        BankAccount choosen = ChooseAccount();
+        Console.WriteLine($"Current Balance: {choosen.Balance}");
+        Console.WriteLine("enter withdrawl amout below: ");
 
+        double amount;
+        try
+        {
+            amount = double.Parse(Console.ReadLine() ?? "");
+        }
+        catch (Exception)
+        {
+            Console.WriteLine("Invalid input..");
+            return;
+        }
+
+        choosen.Withdraw(amount);
+        Console.WriteLine($"Account name: {choosen.HolderName}");
+        Console.WriteLine($"Account new Balance: {choosen.Balance}");
     }
     static void ViewProductDetails()
     {
