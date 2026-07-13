@@ -290,9 +290,13 @@ internal class Program
     }
     static void ViewProductDetails()
     {
+        Product choosen = ChooseProduct();
+        Console.WriteLine($"Product inventory value: {choosen.GetInventoryValue()}");
 
     }
     ///////
+    //////
+    
 }
 
 
