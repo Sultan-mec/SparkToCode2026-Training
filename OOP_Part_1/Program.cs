@@ -71,7 +71,7 @@ public class Product
     public string ProductName { get; set; }
     public double Price { get; set; }
     public int StockQuantity { get; set; }
-    
+
     public void Sell(int quantity)
     {
         if (quantity > StockQuantity)
@@ -181,10 +181,10 @@ internal class Program
                 case 6: RegisterStudent(); break;
                 case 7: CompareAccountBalance(); break;
                 case 8: RestockProduct(); break;
-                case 9: TransferBetweenAccounts(); break;
-                case 10: UpdateStudentGrade(); break;
-                case 11: StudentReportCard(); break;
-                case 12: AccountHealthStatus(); break;
+                //case 9: TransferBetweenAccounts(); break;
+                //case 10: UpdateStudentGrade(); break;
+                //case 11: StudentReportCard(); break;
+                //case 12: AccountHealthStatus(); break;
                 //case 13: BulkSale(); break;
                 //case 14: Scholarship(); break;
                 //case 15: BalanceTopUp(); break;
@@ -315,8 +315,8 @@ internal class Program
         if (account1.Balance > account2.Balance)
         {
             Console.WriteLine($"{account1.HolderName}'s has more balance than {account2.HolderName}'s");
-        } 
-        else if  (account2.Balance > account1.Balance)
+        }
+        else if (account2.Balance > account1.Balance)
         {
             Console.WriteLine($"{account2.HolderName}'s has more balance than {account1.HolderName}");
         }
@@ -327,23 +327,49 @@ internal class Program
     }
     static void RestockProduct()
     {
+        Product product = ChooseProduct();
+        Console.WriteLine("Enter amount to restock: ");
+        int restock = 0;
+        //
+        try
+        {
+            restock = int.Parse(Console.ReadLine().Trim());
+        }
+        catch (Exception)
+        { Console.WriteLine("Invalid input.."); return; }
+        //
+        if (restock <= 0)
+        { Console.WriteLine("invalid input.."); return; }
+        //
+        product.Restock(restock);
+        if (product.StockQuantity > 10)
+        {
+            Console.WriteLine("Low on stock");
+        }
+        else if (product.StockQuantity >= 10 && product.StockQuantity <= 49)
+        {
+            Console.WriteLine("moderate stock level");
+        }
+        else
+        {
+            Console.WriteLine("well stocked");
+        }
+        static void TransferBetweenAccounts()
+        {
 
-    }
-    static void TransferBetweenAccounts()
-    {
+        }
+        static void UpdateStudentGrade()
+        {
 
-    }
-    static void UpdateStudentGrade()
-    {
+        }
+        static void StudentReportCard()
+        {
 
-    }
-    static void StudentReportCard()
-    {
+        }
+        static void AccountHealthStatus()
+        {
 
-    }
-    static void AccountHealthStatus()
-    {
-
+        }
     }
 }
 
