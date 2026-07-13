@@ -224,7 +224,6 @@ internal class Program
         }
         return (choice == 1) ? student1 : (choice == 2) ? student2 : null;
     }
-    //
     static Product ChooseProduct()
     {
         Console.WriteLine("select a product:" +
@@ -242,6 +241,7 @@ internal class Program
         }
         return (choice == 1) ? product1 : (choice == 2) ? product2 : null;
     }
+    ////////////////////////////////////
     static void ViewAccountDetails()
     {
         BankAccount choosen = ChooseAccount();
@@ -294,15 +294,36 @@ internal class Program
         Console.WriteLine($"Product inventory value: {choosen.GetInventoryValue()}");
 
     }
-    ///////
-    //////
+    ///////M///////
     static void RegisterStudent()
     {
-
+        Student student = ChooseStudent();
+        if (student != null)
+        {
+            Console.WriteLine("Enter your email: ");
+            string mail = Console.ReadLine().Trim();
+            student.Register(mail);
+            Console.WriteLine("email registered");
+        }
     }
     static void CompareAccountBalance()
     {
-
+        Console.WriteLine("selcted 1st account then another to compare!");
+        BankAccount account1 = ChooseAccount();
+        BankAccount account2 = ChooseAccount();
+        //
+        if (account1.Balance > account2.Balance)
+        {
+            Console.WriteLine($"{account1.HolderName}'s has more balance than {account2.HolderName}'s");
+        } 
+        else if  (account2.Balance > account1.Balance)
+        {
+            Console.WriteLine($"{account2.HolderName}'s has more balance than {account1.HolderName}");
+        }
+        else
+        {
+            Console.WriteLine("both account hold the same balance");
+        }
     }
     static void RestockProduct()
     {
