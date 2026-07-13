@@ -244,15 +244,28 @@ internal class Program
     }
     static void ViewAccountDetails()
     {
-
+        BankAccount choosen = ChooseAccount();
+        choosen.CheckBalance();
     }
     static void UpdateStudentAddress()
     {
-
+        Student student = ChooseStudent();
+        Console.WriteLine("Enter new address below:");
+        string newAddress = Console.ReadLine();
+        student.Address = newAddress;
+        Console.WriteLine("new address is : " + student.Address);
     }
     static void MakeDeposit()
     {
-
+        BankAccount choosen = ChooseAccount();
+        Console.WriteLine("Enter deposit amount below: ");
+        double amount = double.Parse(Console.ReadLine());
+        //
+        choosen.Deposit(amount);
+        //
+        Console.WriteLine("##############");
+        Console.WriteLine($"Account name: {choosen.HolderName}");
+        Console.WriteLine($"Account updated balance: {choosen.Balance}");
     }
     static void MakeWithdrawal()
     {
