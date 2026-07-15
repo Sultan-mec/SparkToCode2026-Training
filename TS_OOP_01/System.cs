@@ -1,12 +1,14 @@
 ﻿
 
+using HotelSystem;
+
 namespace TS_OOP_01
 {
     internal class System
     {
-        List<Room> rooms = new List<Room>();
-       // List<Guest> guests = new List<Guest>();
-
+        static List<Room> rooms = new List<Room>();
+        static List<Guest> guests = new List<Guest>();
+        
         static void Main(string[] args)
         {
             PreloadRooms();
