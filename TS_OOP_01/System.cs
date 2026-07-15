@@ -79,7 +79,28 @@ namespace TS_OOP_01
         }
         static void AddNewRoom()
         {
-
+            Console.WriteLine("Enter Room number of your desire: ");
+            int Roomnum;
+            try { Roomnum = int.Parse(Console.ReadLine() ?? ""); } catch (FormatException) { Console.WriteLine("Invalid number."); return; }
+            //
+            if (rooms.Any(r => r.roomNumber == Roomnum))
+            { Console.WriteLine("Room exists.. try another number"); return; }
+            //
+            Console.WriteLine("choose the type(Single, Double, Suite): ");
+            string RoomType = Console.ReadLine() ?? "";
+            if (RoomType != "Single" && RoomType != "Double" && RoomType != "Suite")
+            { Console.WriteLine("invalid room type"); return;  }
+            //
+            Console.WriteLine("Enter room price per night: ");
+            double Price;
+            try { Price = double.Parse(Console.ReadLine() ?? ""); } catch (FormatException) { Console.WriteLine("Invalid price."); return; }
+            //
+            rooms.Add(new Room(Roomnum, RoomType, Price));
+            Console.WriteLine("data procceseed and entered into system");
+            Console.WriteLine($"Room number: {Roomnum}");
+            Console.WriteLine($"Room type: {RoomType} ");
+            Console.WriteLine($"Price per night: {Price}");
+            Console.WriteLine($"Total rooms currently: {rooms.Count}");
         }
         static void RegisterNewGuest()
         {
