@@ -1,6 +1,8 @@
 <Solution>
+  <Project Path="OOP_Part_1/OOP_Part_1.csproj" Id="6b7e5a2d-4399-4dd7-99a1-049dad5b96f7" />
   <Project Path="SparkToCode2026/Task1.csproj" />
   <Project Path="Task 5/Task 5.csproj" Id="4fba3489-8050-4ac5-8bcc-27b38308521d" />
+  <Project Path="Task 4/Task 4.csproj" Id="49e6b088-7dc6-4d41-86aa-10d5ad9cc59f" />
   <Project Path="Task-2/Task-2.csproj" />
   <Project Path="Task-3/Task-3.csproj" Id="d5216b02-d7dc-4201-a37a-6b441429fa9b" />
   <Project Path="Task-writing-easier by sultan/Task-writing-easier by sultan.csproj" Id="0e015b1c-09f1-4360-ba25-f27cf1241966" />
