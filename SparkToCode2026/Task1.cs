@@ -80,7 +80,7 @@ internal class Task1
         }
 
         Console.WriteLine("Name: " + username1 + " ,Age: " + userage1 + " ,Hieght: " + hight1 + " ,Student: " + studentcheck1);
-
+        Console.ReadLine();
 
     }
 
