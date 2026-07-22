@@ -24,7 +24,7 @@ namespace HotelSystem
             return totalNights * pricePerNight;
         }
 
-        public void DisplayGuest()
+        public void displayGuest()
         {
             Console.WriteLine($"ID: {guestId} | Name: {guestName} | Room: {roomNumber} | Check-in: {checkInDate} | Nights: {totalNights}");
         }

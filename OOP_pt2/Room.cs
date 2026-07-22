@@ -20,7 +20,9 @@ namespace HotelSystem
         public void displayRoom()
         {
             string status = isAvailable ? "Available" : "Booked";
-            Console.WriteLine($"Room: {roomNumber} | Type: {roomType} | Price: OMR {pricePerNight} | Status: {status}");
+            Console.WriteLine($"Room: {roomNumber} | Type: {roomType}" +
+                $" | Price: OMR {pricePerNight} | Status: {status}");
+
         }
     }
 }
