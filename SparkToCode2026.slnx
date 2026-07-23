@@ -1,11 +1,35 @@
 <Solution>
-  <Project Path="OOP_2_Hotel_system/OOP_2_Hotel_system.csproj" Id="56dc723c-b8b3-4248-a6d0-5c9db167dda2" />
-  <Project Path="Project_Sprint2/Project_Sprint2.csproj" Id="023c996a-59b8-4370-bbce-ff351bdfc695" />
-  <Project Path="OOP_Part_1/OOP_Part_1.csproj" Id="6b7e5a2d-4399-4dd7-99a1-049dad5b96f7" />
-  <Project Path="SparkToCode2026/Task1.csproj" />
-  <Project Path="Task 5/Task 5.csproj" Id="4fba3489-8050-4ac5-8bcc-27b38308521d" />
-  <Project Path="Task 4/Task 4.csproj" Id="49e6b088-7dc6-4d41-86aa-10d5ad9cc59f" />
-  <Project Path="Task-2/Task-2.csproj" />
-  <Project Path="Task-3/Task-3.csproj" Id="d5216b02-d7dc-4201-a37a-6b441429fa9b" />
-  <Project Path="Task-writing-easier by sultan/Task-writing-easier by sultan.csproj" Id="0e015b1c-09f1-4360-ba25-f27cf1241966" />
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Default" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="OOP_2_Hotel_system/OOP_2_Hotel_system.csproj" Id="56dc723c-b8b3-4248-a6d0-5c9db167dda2">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
+  <Project Path="OOP_Part_1/OOP_Part_1.csproj" Id="6b7e5a2d-4399-4dd7-99a1-049dad5b96f7">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Project_Sprint2/Project_Sprint2.csproj" Id="023c996a-59b8-4370-bbce-ff351bdfc695">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="SparkToCode2026/Task1.csproj">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Task 4/Task 4.csproj" Id="49e6b088-7dc6-4d41-86aa-10d5ad9cc59f">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Task 5/Task 5.csproj" Id="4fba3489-8050-4ac5-8bcc-27b38308521d">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Task-2/Task-2.csproj">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Task-3/Task-3.csproj" Id="d5216b02-d7dc-4201-a37a-6b441429fa9b">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
+  <Project Path="Task-writing-easier by sultan/Task-writing-easier by sultan.csproj" Id="0e015b1c-09f1-4360-ba25-f27cf1241966">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
 </Solution>
